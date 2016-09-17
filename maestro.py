@@ -11,7 +11,7 @@ import sys
 def set_target(port, channel, target):
     """set target position for servo channel on port.
     target is in units of 0.25us, e.g. a value of 6000 = 1500us"""
-    port.write(stuct.pack('BBBB', 0x84, channel, target & 0x7f, (target >> 7) & 0x7f))
+    port.write(struct.pack('BBBB', 0x84, channel, target & 0x7f, (target >> 7) & 0x7f))
 
 def set_targets(port, first_channel, targets):
     """set multiple targets starting at first_channel to the values in targets on port.
